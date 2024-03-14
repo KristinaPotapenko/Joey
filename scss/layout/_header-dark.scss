@@ -1,0 +1,132 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 32px 16px 0 16px;
+
+  &__theme {
+    position: absolute;
+    top: 32px;
+    right: 20%;
+    cursor: pointer;
+
+    @media screen and (min-width: 800px) {
+      position: absolute;
+      top: 32px;
+      right: 12px;
+    }
+
+    &__text {
+      margin-bottom: 0;
+      color: var(--primary-dark-color);
+    }
+
+    &__decor {
+      width: 30px;
+      height: 30px;
+      background-color: var(--primary-dark-color);
+      border-radius: 50px;
+    }
+
+    &--white,
+    &--dark {
+      width: 80px;
+      height: 40px;
+      background-color: var(--primary-light-color);
+      border-radius: 50px;
+    }
+  }
+
+  &__theme--active {
+    display: none;
+  }
+
+  &__theme--pasive {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__logo {
+    @media screen and (min-width: $bp-tablet) {
+      margin: 0 auto;
+    }
+
+    &--white {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: block;
+    cursor: pointer;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      padding: 5px;
+      background-color: var(--accent-color-dark);
+      border-radius: 80px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 9px 16px;
+
+    &:hover {
+      color: var(--primary-dark-color);
+      background-color: var(--primary-light-color);
+      border-radius: 48px;
+    }
+  }
+
+  &__link--active {
+    color: var(--primary-dark-color);
+    background-color: var(--primary-light-color);
+    border-radius: 48px;
+  }
+
+  &__project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background-color: var(--accent-color-light);
+    border-radius: 100%;
+
+    &__quantity {
+      margin-bottom: 0;
+      font-size: 16px;
+      color: var(--primary-dark-color);
+    }
+  }
+}

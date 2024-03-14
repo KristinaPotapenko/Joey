@@ -1,0 +1,112 @@
+.hero-section {
+  padding: 92px 0 27px 0;
+
+  @media screen and (min-width: $bp-tablet) {
+    padding: 220px 0 40px 0;
+  }
+
+  @media screen and (min-width: $bp-laptop) {
+    padding: 206px 0 72px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__content-wrap {
+    position: relative;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+
+    @media screen and (min-width: $bp-tablet) {
+      justify-content: space-between;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    margin-bottom: 9px;
+    font-size: 20px;
+    line-height: calc(28 / 20);
+
+    @media screen and (min-width: $bp-laptop) {
+      font-size: 24px;
+      line-height: calc(31 / 24);
+    }
+  }
+
+  &__mail {
+    color: var(--primary-light-color);
+  }
+
+  &__description {
+    max-width: 210px;
+
+    @media screen and (min-width: $bp-tablet) {
+      max-width: 481px;
+      font-size: 16px;
+      line-height: calc(24 / 16);
+    }
+
+    @media screen and (min-width: $bp-laptop) {
+      font-size: 20px;
+      line-height: calc(28 / 20);
+    }
+  }
+
+  &__wrap--dark {
+    display: none;
+  }
+
+  &__wrap--white {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    position: absolute;
+    top: 42%;
+    right: 10%;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 8px;
+    color: var(--primary-light-color);
+    text-transform: uppercase;
+    background-color: var(--accent-color-dark);
+    border-radius: 144px;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #292929;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      bottom: 30%;
+      right: 14%;
+      margin-bottom: 0;
+      padding: 32px;
+    }
+
+    @media screen and (min-width: $bp-laptop) {
+      top: 44%;
+      right: -5%;
+      bottom: 40%;
+    }
+
+    &__arrow {
+      display: inline-block;
+      margin-left: 8px;
+    }
+  }
+}
