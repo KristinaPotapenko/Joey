@@ -1,0 +1,111 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(196, 196, 196, 0.7);
+
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 16px 0 16px;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 40px;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: 40%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    cursor: pointer;
+  }
+
+  &__close__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    background-color: var(--button-color-light);
+  }
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  &__title {
+    color: var(--primary-light-color);
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__input {
+    padding: 12px 20px;
+    font-family: "Labil", sans-serif;
+    font-size: 14px;
+    line-height: 1.7142857143;
+    color: var(--primary-dark-color);
+    background-color: var(--primary-light-color);
+    border: none;
+    border-radius: 48px;
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: 20px;
+      line-height: calc(28 / 20);
+    }
+
+    &:focus-visible {
+      outline: var(--accent-color-light) auto 1px;
+    }
+  }
+
+  &__error {
+    border: 2px solid red;
+
+    &:focus-visible {
+      outline: red auto 1px;
+    }
+  }
+
+  &__button {
+    padding: 12px 20px;
+    font-family: "Labil", sans-serif;
+    font-size: 14px;
+    line-height: 1.7142857143;
+    color: var(--primary-dark-color);
+    background-color: #c2c2c2;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--primary-light-color);
+      background-color: #818181;
+    }
+  }
+}
