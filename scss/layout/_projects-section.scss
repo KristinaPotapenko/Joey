@@ -61,6 +61,10 @@
 
   &__arrow {
     transform: rotate(270deg);
+
+    &--white {
+      display: none;
+    }
   }
 
   &__list {
