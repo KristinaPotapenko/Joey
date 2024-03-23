@@ -1,41 +1,16 @@
 <?php
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+    $to  = 'kristinapotapenko96@gmail.com' . ', '; 
+    $to .= 'mail2@example.com';
 
-    require 'phpmailer/src/Exception.php';
-    require 'phpmailer/src/PHPMailer.php';
+    $subject = 'Message Joey';
 
-    $mail = new PHPMailer(true);
-    $mail->CharSet = 'UTF-8';
-    $mail->setLanguage('en', 'phpmailer/language/');
-    $mail->IsHTML(true);
+    $message = 'User' . $_POST['name'] . ' send message. Email:' . $_POST['email'];
 
-    $mail->setForm('user@gmail.com', 'user');
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
-    $mail->addAddress('kristinapotapenko96@gmail.com');
+    $headers .= 'To: Kristina <kristinapotapenko96@gmail.com>' . "\r\n"; // Свое имя и email
+    $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
 
-    $mail->Subject = 'Hello!';
-
-    $body = '<h1>JOEY!</h1>'
-
-    if(trim(!empty($_POST['name']))){
-        $body = '<p><strong>Name:</strong> '.$_POST['name'].'</p>';
-    }
-
-    if(trim(!empty($_POST['email']))){
-        $body = '<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
-    }
-
-    $mail->Body = $body;
-
-    if (!$mail-> send()){
-        $message = 'Error!';
-    } else{
-        $message = 'Data send!'
-    }
-
-    $response = ['message' => $message];
-
-    header('Content-type: application/json');
-    echo json_encods($response);
+    mail($to, $subject, $message, $headers);
 ?>
